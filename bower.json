@@ -20,5 +20,6 @@
   },
   "devDependencies": {
     "sass-mediaqueries": "1.4.0"
+    "holderjs": "2.4.1"
   }
 }

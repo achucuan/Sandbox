@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="appSandbox">
+<head lang="en">
+    <title>A Sand Box</title>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.min.css"/>
+    <link rel="stylesheet" href="bower_components/angular/angular-csp.css"/>
+</head>
+<body>
+
+<header class="page-header">
+
+    <nav class="navbar">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img src="holder.js/150x80/#FC9B6B:#FFF/text:@ sandbox" class="img-thumbnail"></a>
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+        <div id="navbar" class="collapse navbar-collapse" ng-controller="NavbarController">
+            <ul class="nav navbar-nav" ng-repeat="nav in navbar">
+                <li {{ nav.status }}><a href="{{ nav.href }}">{{ nav.name }}</a></li>
+            </ul>
+        </div>
+        <!-- /.nav-collapse -->
+
+    </nav>
+</header>
+
+
+<div id="wrapper" class="container">
+
+    <section id="articles" class="row" ng-controller="NewsController">
+
+        <article class="col-xs-12 col-lg-6 article" ng-repeat="article in articles | filter:query | orderBy:orderProp">
+            <img src="{{ article.image }}" class="img-responsive img-circle" ng-show="article.image">
+
+            <h2>{{ article.title }}</h2>
+            <time datetime="{{ article.date }}" class="time">{{ article.dateString }}</time>
+            <p>{{ article.description }}
+            </p>
+            <a class="view-more" href="{{ article.permalink }}" role="button">...</a>
+            <!--<a class="btn btn-cyan" href="#" role="button">View details »</a>-->
+            <hr/>
+        </article>
+
+        <ul class="pager">
+            <li><a href="#">&larr; Previous</a></li>
+            <li><a href="#">Next &rarr;</a></li>
+        </ul>
+
+    </section>
+    <!--/row-->
+
+</div>
+<!--cointainer-->
+
+<footer class="footer">
+    <div class="container">
+        <div class="col-md-9">
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, reiciendis?</p>
+        </div>
+        <div class="col-md-3 right">
+            <label class="sr-only" for="search">Search</label>
+            <input ng-model="query" class="form-control" id="search" placeholder="Search ... !">
+        </div>
+    </div>
+</footer>
+<!--footer-->
+
+<script src="bower_components/holderjs/holder.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

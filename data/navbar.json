@@ -1,0 +1,7 @@
+[
+  {"name": "Home", "href": "/", "status": "class=\"active\""},
+  {"name": "About", "href": "/about", "status": ""},
+  {"name": "Contact", "href": "/contact", "status": ""},
+  {"name": "Linkedin", "href": "/linkedin", "status": ""},
+  {"name": "GitHub", "href": "/github", "status": ""}
+]
